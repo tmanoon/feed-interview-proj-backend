@@ -4,7 +4,8 @@ import { logger } from '../../services/logger.service.js'
 export async function getComments(req, res) {
     try {
         logger.debug('Getting Comments:', req.query)
-        const filterBy = req.body
+        const filterBy = req.query
+        console.log(filterBy)
         const comments = await commentService.query(filterBy)
         res.json(comments)
     } catch (err) {

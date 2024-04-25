@@ -1,15 +1,11 @@
 import { logger } from '../../services/logger.service.js'
 import { dbService } from '../../services/db.service.js'
-import { logger } from '../../services/logger.service.js'
-import { utilService } from '../../services/util.service.js'
 import mongodb from 'mongodb'
 const { ObjectId } = mongodb
 
-const cryptr = new Cryptr(process.env.SECRET || 'Manoon-1234')
-
-
 async function query(criteria = {}) {
     try {
+        console.log(criteria)
         const collection = await dbService.getCollection('comment')
         const filterCriteria = {}
         if (criteria.txt) {

@@ -29,14 +29,14 @@ if (process.env.NODE_ENV === 'production') {
     app.use(cors(corsOptions))
 }
 
-import { authRoutes } from './api/auth/auth.routes.js'
+// import { authRoutes } from './api/auth/auth.routes.js'
 import { commentRoutes } from './api/comment/comment.routes.js'
 
 // routes
 import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js'
 app.all('*', setupAsyncLocalStorage)
 
-app.use('/api/auth', authRoutes)
+// app.use('/api/auth', authRoutes)
 app.use('/api/comment', commentRoutes)
 
 // Make every server-side-route to match the index.html

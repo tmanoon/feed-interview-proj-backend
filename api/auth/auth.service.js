@@ -1,7 +1,6 @@
 import Cryptr from 'cryptr'
 import bcrypt from 'bcrypt'
 
-import { userService } from '../user/user.service.js'
 import { logger } from '../../services/logger.service.js'
 
 const cryptr = new Cryptr(process.env.SECRET || 'Secret-Puk-1234')
